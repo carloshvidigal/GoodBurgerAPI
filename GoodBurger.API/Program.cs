@@ -1,3 +1,7 @@
+using GoodBurger.Application.Services;
+using GoodBurger.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<OrderService>();
+
+builder.Services.AddDbContext<GoodBurgerDbContext>(options => options.UseSqlite("Data Source=goodburger.db"));
 
 var app = builder.Build();
 
