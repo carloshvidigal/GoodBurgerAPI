@@ -50,20 +50,20 @@ public class Order
             SandwichType.XBurger => ValueObjects.MenuPrices.XBurger,
             SandwichType.XEgg => ValueObjects.MenuPrices.XEgg,
             SandwichType.XBacon => ValueObjects.MenuPrices.XBacon,
-            _ => throw new Exception("Invalid sandwich")
+            _ => throw new ArgumentException("Invalid sandwich")
         };
     }
 
     private decimal CalculateDiscount(decimal subtotal)
     {
         if (HasFries && HasDrink)
-            return Subtotal * 0.20m;
+            return subtotal * 0.20m;
 
         if (HasDrink && !HasFries)
-            return Subtotal * 0.15m;
+            return subtotal * 0.15m;
 
         if (HasFries && !HasDrink)
-            return Subtotal * 0.10m;
+            return subtotal * 0.10m;
 
         return 0;
     }
