@@ -1,1 +1,7 @@
-<Solution />
+<Solution>
+  <Project Path="GoodBurger.API/GoodBurger.API.csproj" />
+  <Project Path="GoodBurger.Application/GoodBurger.Application.csproj" />
+  <Project Path="GoodBurger.Domain/GoodBurger.Domain.csproj" />
+  <Project Path="GoodBurger.Infrastructure/GoodBurger.Infrastructure.csproj" />
+  <Project Path="GoodBurger.Tests/GoodBurger.Tests.csproj" />
+</Solution>
