@@ -1,11 +1,19 @@
 ﻿using GoodBurger.Application.DTOs;
 using GoodBurger.Domain.Entities;
 using GoodBurger.Domain.Enums;
+using GoodBurger.Infrastructure;
+
 
 namespace GoodBurger.Application.Services;
 
 public class OrderService
 {
+    private readonly GoodBurgerDbContext _context;
+
+    public OrderService(GoodBurgerDbContext context)
+    {
+        _context = context;
+    }
     public OrderResponse CreateOrder(CreateOrderRequest request)
     {
         var order = new Order
@@ -16,6 +24,9 @@ public class OrderService
         };
 
         order.Calculate();
+
+        _context.Orders.Add(order);
+        _context.SaveChanges();
 
         return new OrderResponse
         {
