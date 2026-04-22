@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GoodBurger.Application\GoodBurger.Application.csproj" />
+    <ProjectReference Include="..\GoodBurger.Domain\GoodBurger.Domain.csproj" />
     <ProjectReference Include="..\GoodBurger.Infrastructure\GoodBurger.Infrastructure.csproj" />
   </ItemGroup>
 
