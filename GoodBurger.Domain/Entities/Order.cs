@@ -25,9 +25,9 @@ public class Order
         var subtotal = CalculateSubtotal();
         var discount = CalculateDiscount(subtotal);
 
-        Subtotal = Math.Round(subtotal, 2);
-        Discount = Math.Round(discount, 2);
-        Total = Math.Round(subtotal - discount, 2);
+        Subtotal = subtotal;
+        Discount = discount;
+        Total = subtotal - discount;
     }
 
     private decimal CalculateSubtotal()
@@ -67,6 +67,4 @@ public class Order
 
         return 0;
     }
-
-
 }
