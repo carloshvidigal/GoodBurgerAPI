@@ -82,6 +82,30 @@ ________________________________________
 Testing
 Unit tests can be added in the GoodBurger.Tests project using xUnit.
 ________________________________________
+Possible Improvements
+
+Although the project meets all the requirements, there are some enhancements that could be implemented to improve maintainability, scalability, and adherence to best practices:
+
+Introduce Service Interfaces
+- Create interfaces such as IOrderService to decouple implementation from usage and improve testability.
+
+
+DTO Validation with Data Annotations
+
+- Add attributes like [Required] and validation rules to request DTOs to provide better client feedback and automatic model validation.
+
+Refactor Menu into Application Layer
+- Move menu logic to a dedicated MenuService to maintain consistency with the application architecture.
+
+Expand Test Coverage
+- Add more unit tests for:
+- Update scenarios
+- Invalid inputs
+- Edge cases in business rules
+
+Logging
+- Add structured logging (e.g., using ILogger) for better observability and debugging.
+________________________________________
 License
 This project is for technical evaluation purposes.
 ________________________________________
